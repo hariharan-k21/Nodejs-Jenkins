@@ -20,8 +20,8 @@ pipeline {
                 script {
                     // Install Node.js and npm dependencies
                     sh '''
-                    curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash -
-                    sudo apt-get install -y nodejs
+                    echo "your_password" | sudo -S curl -sL https://deb.nodesource.com/setup_18.x | sudo -S bash -
+                    sudo -S apt-get install -y nodejs
                     npm install
                     '''
                 }
