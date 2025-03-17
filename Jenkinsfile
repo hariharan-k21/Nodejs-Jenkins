@@ -5,13 +5,13 @@ pipeline {
         // Set environment variables
         DEPLOY_SERVER = 'ubuntu@3.110.75.239' // Replace with EC2 username and IP address
         DEPLOY_DIR = '/home/ubuntu/Nodejs-Jenkins/app.js' // Path to your app on EC2
-        NODE_VERSION = '14' // Node.js version to use
+        NODE_VERSION = '18' // Node.js version to use
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/hariharan-k21/Nodejs-Jenkins.git' // Replace with your Git repository
+                git branch: 'main', url: 'https://github.com/hariharan-k21/Nodejs-Jenkins.git' // Replace with your Git repository
             }
         }
 
